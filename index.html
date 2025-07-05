@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kreativa GT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      color: #e91e63;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #222;
+    }
+    .productos div {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+    }
+    ol {
+      padding-left: 20px;
+      font-size: 1.1em;
+    }
+    .btn {
+      display: inline-block;
+      background: #e91e63;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover {
+      background: #c2185b;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      section {
+        margin: 10px;
+        padding: 20px;
+      }
+    }
+    /* WhatsApp floating button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 10000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe57;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kreativa GT</h1>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#como">Cómo trabajamos</a>
+      <a href="#cotiza">Cotiza</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Bienvenido a Kreativa GT</h2>
+    <p>Personalizamos lo que imaginas. Somos expertos en artículos promocionales, regalos corporativos y productos únicos con tu logo o diseño. Calidad, creatividad y entrega en toda Guatemala.</p>
+    <a class="btn" href="#productos">Ver productos</a>
+  </section>
+
+  <section id="productos" class="productos">
+    <h2>Nuestros productos</h2>
+    <div>✅ Tazas personalizadas</div>
+    <div>✅ Camisetas y gorras sublimadas</div>
+    <div>✅ Cojines y termos</div>
+    <div>✅ Libretas, bolígrafos y accesorios corporativos</div>
+    <div>✅ Kits promocionales para empresas y eventos</div>
+  </section>
+
+  <section id="como">
+    <h2>¿Cómo trabajamos?</h2>
+    <ol>
+      <li>Eliges tu producto</li>
+      <li>Nos envías tu logo o diseño</li>
+      <li>Te enviamos una vista previa</li>
+      <li>Confirmas y producimos</li>
+      <li>Enviamos a domicilio o retiras</li>
+    </ol>
+    <p>🕒 Entregas rápidas | 📦 Mayoreo y menudeo</p>
+  </section>
+
+  <section id="cotiza" class="formulario">
+    <h2>Cotiza tu producto</h2>
+    <form onsubmit="return enviarFormulario(event)">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      <label for="producto">Producto deseado:</label>
+      <input type="text" id="producto" name="producto" required />
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" required min="1" />
+      <label for="contacto">WhatsApp / Email:</label>
+      <input type="text" id="contacto" name="contacto" required />
+      <label for="detalles">Detalles adicionales:</label>
+      <textarea id="detalles" name="detalles" rows="4"></textarea>
+      <button class="btn" type="submit">Enviar solicitud</button>
+    </form>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>📍 Ciudad de Guatemala</p>
+    <p>📱 WhatsApp: <a href="https://wa.me/50255555555" target="_blank" rel="noopener" style="color:#25d366; font-weight:bold;">+502 5555-5555</a></p>
+    <p>📧 Email: <a href="mailto:info@kreativagt.com" style="color:#e91e63;">info@kreativagt.com</a></p>
+    <p>📸 Redes sociales: @KreativaGT</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kreativa GT – Tu marca, nuestro arte.</p>
+  </footer>
+
+  <a href="https://wa.me/50255555555" target="_blank" rel="noopener" class="whatsapp-btn" title="Contáctanos por WhatsApp">📱</a>
+
+  <script>
+    function enviarFormulario(event) {
+      event.preventDefault();
+      alert('Gracias por tu solicitud. Nos pondremos en contacto contigo pronto.');
+      // Aquí podrías agregar lógica para enviar los datos a un servidor o correo
+      event.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
